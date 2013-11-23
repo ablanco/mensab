@@ -34,7 +34,6 @@ It also uses some icons
 
 Some icons come from [The Noun Project](http://thenounproject.com) collection.
 
-- **Link** icon by *David Waschbüsch*
 - **Gear** and **Meeple** icons by *Johan H. W. Basberg*
 - **Pie chart** and **Aperture** icons by *P.J. Onori*
 - **Computer** icon by *The Noun Project Organization*

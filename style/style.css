@@ -1,5 +1,5 @@
 body {
-    background: url(bg.png) repeat #181818;
+    background: url(../bg.png) repeat #181818;
     color: #CCC;
     padding: 20px 8%;
 }
@@ -118,7 +118,7 @@ section#footer ul.pull-right {
 .big-icon {
     padding-left: 36px;
     line-height: 28px;
-    background: transparent url(icons/big-sprite.png) no-repeat 0 0;
+    background: transparent url(../icons/big-sprite.png) no-repeat 0 0;
 }
 
 .hobbies {
@@ -144,7 +144,7 @@ section#footer ul.pull-right {
 .icon {
     padding-left: 28px;
     line-height: 22px;
-    background: transparent url(icons/sprite.png) no-repeat 0 0;
+    background: transparent url(../icons/sprite.png) no-repeat 0 0;
 }
 
 .javascript {
