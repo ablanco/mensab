@@ -41,7 +41,7 @@ jQuery.fn.loadRepositories = function (username, descViewport) {
             if (name.length > 25) {
                 name = name.substring(0, 22) + "...";
             }
-            list.append("<li class='github' id='" + idx + "-project'><a href='" + this.html_url + "'>" + name + "</a> <img class='info' src='icons/info.png'>");
+            list.append("<li class='github' id='" + idx + "-project'><a href='" + this.html_url + "'>" + name + "</a> <span class='fa fa-info-circle pull-right'></span>");
             descriptions.append("<span class='hide' id='" + idx + "-projectdesc'>" + this.description + "</span>");
         });
 

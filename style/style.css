@@ -67,7 +67,7 @@ section#credits {
     max-width: 50%;
     right: 20px;
     bottom: 20px;
-    padding: 0px 12px;
+    padding: 10px 12px 0 12px;
     border: 1px solid white;
     background-color: #181818;
     z-index: 1050;
@@ -131,17 +131,4 @@ section#footer ul.pull-right {
 
 .html {
     background-position: 0 -44px;
-}
-
-.opensource {
-    background-position: 0 -66px;
-}
-
-.visualization {
-    background-position: 0 -88px;
-}
-
-img.info {
-    cursor: pointer;
-    float: right;
 }
