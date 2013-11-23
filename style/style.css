@@ -115,32 +115,6 @@ section#footer ul.pull-right {
     left: -20px;
 }
 
-.big-icon {
-    padding-left: 36px;
-    line-height: 28px;
-    background: transparent url(../icons/big-sprite.png) no-repeat 0 0;
-}
-
-.hobbies {
-    background-position: 0 0;
-}
-
-.projects {
-    background-position: 0 -28px;
-}
-
-.conferences {
-    background-position: 0 -56px;
-}
-
-.awards {
-    background-position: 0 -84px;
-}
-
-.technologies {
-    background-position: 0 -112px;
-}
-
 .icon {
     padding-left: 28px;
     line-height: 22px;

@@ -34,9 +34,6 @@ It also uses some icons
 
 Some icons come from [The Noun Project](http://thenounproject.com) collection.
 
-- **Gear** and **Meeple** icons by *Johan H. W. Basberg*
-- **Pie chart** and **Aperture** icons by *P.J. Onori*
-- **Computer** icon by *The Noun Project Organization*
-- **Presentation** icon by *Joris Hoogendoorn*
-- **Trophy** icon by *Matthew R. Miller*
+- **Gear** and icons by *Johan H. W. Basberg*
+- **Pie chart** and icons by *P.J. Onori*
 - **Mail** icon by *Marc Haumann*
