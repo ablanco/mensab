@@ -26,16 +26,15 @@ jQuery.fn.loadRepositories = function (username, descViewport) {
     $.github.getRepos(username, function (response) {
         var repos = response.data,
             descriptions = $(descViewport),
-            list = $('<ul/>'),
+            list = $('<ul class="list-unstyled"><ul/>'),
             projects,
             projectsDescs,
-            height,
             showDesc;
 
         sortByNumberOfWatchers(repos);
 
         target.empty().append(list);
-        $(repos).filter(function (idx) {
+        $(repos).filter(function () {
             return jQuery.inArray(this.name, $.github.filterList) === -1;
         }).each(function (idx) {
             var name = this.name;
@@ -43,7 +42,7 @@ jQuery.fn.loadRepositories = function (username, descViewport) {
                 name = name.substring(0, 22) + "...";
             }
             list.append("<li class='github' id='" + idx + "-project'><a href='" + this.html_url + "'>" + name + "</a> <img class='info' src='icons/info.png'>");
-            descriptions.append("<span class='hidden' id='" + idx + "-projectdesc'>" + this.description + "</span>");
+            descriptions.append("<span class='hide' id='" + idx + "-projectdesc'>" + this.description + "</span>");
         });
 
         // mouse behaviours
@@ -52,8 +51,8 @@ jQuery.fn.loadRepositories = function (username, descViewport) {
 
         showDesc = function (node) {
             var desc = $("#" + node.id.split('-')[0] + "-projectdesc");
-            projectsDescs.addClass("hidden");
-            desc.removeClass("hidden");
+            projectsDescs.addClass("hide");
+            desc.removeClass("hide");
         };
 
         projects.on("mouseenter", function () {
@@ -61,7 +60,7 @@ jQuery.fn.loadRepositories = function (username, descViewport) {
         });
 
         projects.on("mouseleave", function () {
-            projectsDescs.addClass("hidden");
+            projectsDescs.addClass("hide");
         });
 
         list.find("li img.info").click(function () {

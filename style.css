@@ -9,7 +9,6 @@ h1, h2, h3 {
 }
 
 h1 {
-    margin: 0;
     font-size: 2em;
 }
 
@@ -21,11 +20,6 @@ h2 {
 
 a {
     color: #52a3cc;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0px;
 }
 
 li:first-child h2 {
@@ -45,10 +39,6 @@ li a img {
     margin-left: 5px;
     position: relative;
     top: -2px;
-}
-
-.hidden {
-    display: none;
 }
 
 section {
@@ -120,18 +110,9 @@ section#footer li:first-child {
     margin-left: 0;
 }
 
-section#footer ul.right {
+section#footer ul.pull-right {
     position: relative;
     left: -20px;
-}
-
-section#footer ul.right li {
-    float: right;
-    margin-right: 20px;
-}
-
-section#footer ul.right li:first-child {
-    margin-right: 0;
 }
 
 .big-icon {
