@@ -1,4 +1,4 @@
-/*jslint vars: false */
+/*jslint browser: true */
 /*global jQuery, $ */
 
 jQuery.github = {
@@ -7,7 +7,11 @@ jQuery.github = {
         jQuery.getJSON("https://api.github.com/users/" + username + "/repos?callback=?", callback);
     },
 
-    filterList: ["config", "GECO", "geco-ffox-extension", "cagg-browser-extensions", "agora-ciudadana", "yith-library-server"]
+    filterList: [
+        "config", "GECO", "geco-ffox-extension", "cagg-browser-extensions",
+        "agora-ciudadana", "yith-library-server", "django-mathjax", "mensab",
+        "postgresql", "dissim", "dissim-memoria", "zc.sourcerelease"
+    ]
 };
 
 jQuery.fn.loadRepositories = function (username, descViewport) {
