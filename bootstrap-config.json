@@ -7,10 +7,12 @@
     "tooltip.less",
     "popovers.less",
     "utilities.less",
-    "responsive-utilities.less"
+    "responsive-utilities.less",
+    "component-animations.less"
   ],
   "js": [
     "tooltip.js",
-    "popover.js"
+    "popover.js",
+    "transition.js"
   ]
 }

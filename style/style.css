@@ -58,6 +58,14 @@ section#me {
     line-height: 1.6em;
 }
 
+#github-projects span.fa-info-circle {
+    cursor: pointer;
+}
+
+.popover-content {
+    color: black;
+}
+
 #credits-button {
     cursor: pointer;
 }

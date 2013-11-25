@@ -155,10 +155,7 @@
                     <a href="https://github.com/ablanco" target="_blank">
                         <h2><span class="fa fa-github"></span> Github <span class="fa fa-link"></span></h2>
                     </a>
-                    <div class="row">
-                        <div id="github-projects" class="col-sm-6"></div>
-                        <div id="github-descriptions" class="col-sm-6"></div>
-                    </div>
+                    <div id="github-projects"></div>
                 </li>
                 <!--<li id="pypi">
                     <a href="http://pypi.python.org/pypi?%3Aaction=search&term=Alejandro+Blanco&submit=search" target="_blank">
@@ -235,10 +232,11 @@
     </section>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="logic/bootstrap.min.js"></script>
     <script src="logic/github.js"></script>
     <script>
         $(document).ready(function () {
-            $("#github-projects").loadRepositories("ablanco", "#github-descriptions");
+            $("#github-projects").loadRepositories("ablanco");
             var creditsHandler = function (evt) {
                 $("#credits").toggleClass("hide");
                 $("#credits-backdrop").toggleClass("hide");
