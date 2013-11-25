@@ -62,8 +62,9 @@ section#me {
     cursor: pointer;
 }
 
-.popover-content {
-    color: black;
+.popover,
+.popover h3 {
+    color: rgb(51, 51, 51);
 }
 
 #credits-button {

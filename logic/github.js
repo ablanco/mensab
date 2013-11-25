@@ -38,18 +38,17 @@ jQuery.fn.loadRepositories = function (username) {
         $(repos).filter(function () {
             return jQuery.inArray(this.name, $.github.filterList) === -1;
         }).each(function () {
-            var name = this.name,
-                $info,
-                $li;
+            var $info, $li;
 
-            $li = $("<li class='github'><a href='" + this.html_url + "'>" +
-                name + "</a> <span class='fa fa-info-circle pull-right'>" +
-                "</span>");
+            $li = $("<li class='github'><a href='" + this.html_url +
+                "' target='_blank'>" + this.name + "</a> <span class='fa " +
+                "fa-info-circle pull-right'></span>");
 
             $info = $li.find("span.fa-info-circle");
             $info.popover({
                 placement: "left",
                 trigger: "click",
+                title: this.name,
                 content: this.description
             });
 
