@@ -20,7 +20,7 @@ jQuery.fn.loadRepositories = function (username) {
     var target = this,
         sortByNumberOfWatchers;
 
-    this.html("<span>Querying GitHub for repositories...</span>");
+    this.html("<span class='fa fa-spinner fa-spin'></span> Querying GitHub for repositories...");
 
     sortByNumberOfWatchers = function (repos) {
         repos.sort(function (a, b) {
