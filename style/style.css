@@ -126,7 +126,7 @@ section#footer ul.pull-right {
 .icon {
     padding-left: 28px;
     line-height: 22px;
-    background: transparent url(../icons/sprite.png) no-repeat 0 0;
+    background: transparent url(../sprite.png) no-repeat 0 0;
 }
 
 .javascript {
