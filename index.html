@@ -1,254 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="keywords" content="javascript html5 nodejs d3js backbone css alejandroblanco python django pyramid"/>
-    <meta name="description" content="Personal site of Alejandro Blanco."/>
-    <meta name="author" content="Alejandro Blanco"/>
-    <meta name="robots" content="all"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="keywords" content="javascript html5 nodejs d3js jquery ember alejandroblanco python django" />
+  <meta name="description" content="Alejandro Blanco's personal site" />
+  <meta name="author" content="Alejandro Blanco" />
+  <meta name="robots" content="all" />
 
-    <title>mensab.com - Personal site of Alejandro Blanco</title>
+  <title>mensab.com - Personal site of Alejandro Blanco</title>
 
-    <link rel="icon" href="/favicon.ico"/>
-    <link href="style/bootstrap.min.css" rel="stylesheet">
-    <link href="style/font-awesome.min.css" rel="stylesheet">
-    <link href="style/style.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+    crossorigin="anonymous" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4ER14PPJ1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-S4ER14PPJ1");
+  </script>
 </head>
+
 <body>
+  <div class="container">
     <div class="row">
-
-    <div id="idContainer" class="col-xs-12 col-sm-12 col-md-4">
-        <section id="me" class="noborder">
-            <img src="me.png"/>
-            <p>Hi! My name is Alejandro Blanco.</p>
-            <p>
-                I'm a front-end developer in love with web technologies and the
-                JavaScript language.
-            </p>
-        </section>
-        <section id="contact">
-            <ul class="list-unstyled">
-                <li id="email">
-                    <a href="mailto:alejandro.b.e@gmail.com">
-                        <h2><span class="fa fa-envelope"></span> E-Mail</h2>
-                    </a>
-                </li>
-                <li id="linkedin">
-                    <a href="http://www.linkedin.com/in/alejandrobe" target="_blank">
-                        <h2><span class="fa fa-linkedin"></span> LinkedIn</h2>
-                    </a>
-                </li>
-                <li id="twitter">
-                    <a href="https://twitter.com/K2718" target="_blank">
-                        <h2><span class="fa fa-twitter"></span> Twitter</h2>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-        <h1><span class="fa fa-laptop"></span> Technologies</h1>
-        <section id="technologies">
-            <ul class="list-unstyled">
-                <li id="javascript">
-                    <h2 class="icon javascript">JavaScript</h2>
-                    <p>
-                        I fell in love with JavaScript a few years ago, and now
-                        I use it everyday. It's an amazing technology if you
-                        avoid the bad parts. I have experience with jQuery,
-                        Dojo, Prototype, Underscore, Backbone and others.
-                        Thanks to the web expansion, JS is ubiquitous and
-                        extremely useful.
-                    </p>
-                </li>
-                <li id="python">
-                    <h2 class="icon python">Python</h2>
-                    <p>
-                        One of my favourites programming languages, I love the
-                        simplicity and explicity of Python. I have used Django
-                        for web development, and pyQT and pyGTK for desktop
-                        applications.
-                    </p>
-                </li>
-                <li id="html">
-                    <h2 class="icon html">HTML</h2>
-                    <p>
-                        As a web developer I'm very interested in the
-                        development of the HTML standarts. Following the
-                        standarts and using browsers that support them it's the
-                        only path to a bright future of the web.
-                    </p>
-                </li>
-                <li id="opensource">
-                    <h2><span class="fa fa-code-fork"></span> Open Source</h2>
-                    <p>
-                        I admire the community effort to create good software
-                        and share it with the world. I like to contribute, my
-                        works can be found on my repositories.
-                    </p>
-                </li>
-                <li id="visualization">
-                    <h2><span class="fa fa-bar-chart-o"></span> Visualization</h2>
-                    <p>
-                        I have recently worked in data visualization, and
-                        developed a deep interest in the topic. I love the
-                        d3.js library, it's an incredible tool to create rich
-                        data representations.
-                    </p>
-                </li>
-            </ul>
-        </section>
-        <h1><span class="fa fa-trophy"></span> Awards</h1>
-        <section id="awards">
-            <ul class="list-unstyled">
-                <li id="pfc">
-                    <a href="http://www.informatica.us.es/docs/noticias/anuncios/actaPPFC.pdf" target="_blank">
-                        <h2>Best End-of-Studies Project <span class="fa fa-link"></span></h2>
-                    </a>
-                    <p>"Flood simulation with multi-agent systems".</p>
-                    <p>University of Seville, 2010.</p>
-                </li>
-            </ul>
-        </section>
-        <h1><span class="fa fa-gamepad"></span> Hobbies</h1>
-        <section id="hobbies">
-            <ul class="list-unstyled">
-                <li id="boardgames">
-                    <a href="http://boardgamegeek.com/user/Korosu_Itai" target="_blank">
-                        <h2>Board Games <span class="fa fa-link"></span></h2>
-                    </a>
-                </li>
-                <li id="music">
-                    <a href="http://www.lastfm.es/user/Korosu_Itai" target="_blank">
-                        <h2>Music <span class="fa fa-link"></span></h2>
-                    </a>
-                </li>
-                <li id="movies">
-                    <a href="http://www.filmaffinity.com/es/userratings.php?user_id=155563" target="_blank">
-                        <h2>Movies <span class="fa fa-link"></span></h2>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-        <h1><span class="fa fa-code"></span> Projects</h1>
-        <section id="key-projects">
-            <ul class="list-unstyled">
-                <li id="yith">
-                    <a href="http://yithlibrary.com" target="_blank">
-                        <h2>Yith Library <span class="fa fa-link"></span></h2>
-                    </a>
-                </li>
-                <li id="openmooc">
-                    <a href="http://openmooc.org" target="_blank">
-                        <h2>OpenMOOC <span class="fa fa-link"></span></h2>
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section id="forges">
-            <ul class="list-unstyled">
-                <li id="github">
-                    <a href="https://github.com/ablanco" target="_blank">
-                        <h2><span class="fa fa-github"></span> Github <span class="fa fa-link"></span></h2>
-                    </a>
-                    <div id="github-projects"></div>
-                </li>
-                <!--<li id="pypi">
-                    <a href="http://pypi.python.org/pypi?%3Aaction=search&term=Alejandro+Blanco&submit=search" target="_blank">
-                        <h2>Python Packages <span class="fa fa-link"></span></h2>
-                    </a>
-                </li>-->
-            </ul>
-        </section>
-        <h1><span class="fa fa-bullhorn"></span> Conferences</h1>
-        <section id="conferences">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="http://www.sevillajs.org/events/99713292/" target="_blank">
-                        <h2>SevillaJS <span class="fa fa-link"></span></h2>
-                    </a>
-                    <p>
-                        Speaker, "D3.JS Data visualization".
-                        <a href="/slides/2013/d3.js/" target="_blank">Slides</a>.
-                    </p>
-                    <p>University of Seville, 2013.</p>
-                </li>
-                <li>
-                    <a href="http://opendatasevilla.org/" target="_blank">
-                        <h2>Opendata Sevilla <span class="fa fa-link"></span></h2>
-                    </a>
-                    <p>Speaker, "GORQL, SPARQL queries made easy".</p>
-                    <p>University Pablo de Olavide, 2012.</p>
-                </li>
-                <li>
-                    <h2>GCDS</h2>
-                    <p>Gran Canaria Desktop Summit, 2009.</p>
-                    <p>Akademy (KDE) + GUADEC (GNOME).</p>
-                </li>
-                <li>
-                    <a href="http://jmas.us.es" target="_blank">
-                        <h2>III JMAS <span class="fa fa-link"></span></h2>
-                    </a>
-                    <p>Speaker, "Flood simulation with multi-agent systems".</p>
-                    <p>University of Seville, 2011.</p>
-                </li>
-                <li>
-                    <a href="http://www.imaginatica.org/2011/" target="_blank">
-                        <h2>Imaginática <span class="fa fa-link"></span></h2>
-                    </a>
-                    <p>Speaker, "Flood simulation with multi-agent systems".</p>
-                    <p>University of Seville, 2011.</p>
-                </li>
-            </ul>
-        </section>
-    </div>
-
-    </div>
-
-    <div id="credits-backdrop" class="hide"></div>
-    <section id="credits" class="hide">
+      <div class="two-thirds column">
+        <h1>Hi! My name is Alejandro Blanco</h1>
         <p>
-            Code available on <a href="https://github.com/ablanco/mensab" target="_blank">GitHub</a>,
-            under a MIT License.
+          I'm a full-stack developer well versed in the JavaScript and Python languages and ecosystems. Particularly in
+          <a target="_blank" href="https://emberjs.com/">Ember.js</a>, <a target="_blank"
+            href="https://jquery.com/">jQuery</a> and <a target="_blank"
+            href="https://www.djangoproject.com/">Django</a>.
         </p>
-        <p>
-            Inspired by <a href="http://jorgebastida.com" target="_blank">http://jorgebastida.com</a>
-            and <a href="http://lorenzogil.com" target="_blank">http://lorenzogil.com</a>.
-        </p>
-    </section>
-
-    <section id="footer" class="noborder">
-        <ul class="list-unstyled pull-right">
-            <li id="credits-button">Credits</li>
+        <h2>Contact Information</h2>
+        <ul>
+          <li>
+            <a href="mailto:alejandro.b.e@gmail.com">E-Mail</a>
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/in/alejandrobe" target="_blank">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/K2718" target="_blank">Twitter</a>
+          </li>
         </ul>
-    </section>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="logic/bootstrap.min.js"></script>
-    <script src="logic/github.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#github-projects").loadRepositories("ablanco");
+      <div class="one-third column">
+        <img class="u-full-width" src="me.png" alt="A photo of myself" />
+      </div>
+    </div>
 
-            var creditsHandler = function (evt) {
-                $("#credits").toggleClass("hide");
-                $("#credits-backdrop").toggleClass("hide");
-            }
-            $("#credits-button").click(creditsHandler);
-            $("#credits-backdrop").click(creditsHandler);
-        });
+    <h1>Projects</h1>
+    <ul>
+      <li>
+        <a target="_blank" href="https://glampinghub.com/">Glamping Hub</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://github.com/ablanco/jquery.pwstrength.bootstrap">
+          jQuery Password Strength Meter for Twitter Bootstrap
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.yithlibrary.com/">Yith Library Password Manager</a>
+      </li>
+    </ul>
+    <p>There is more stuff in <a target="_blank" href="https://github.com/ablanco">GitHub</a>.</p>
 
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <h1>Awards</h1>
+    <p>
+      <strong>Best End-of-Studies Project</strong><br />
+      "Flood simulation with multi-agent systems".<br />
+      <em>University of Seville, 2010.</em>
+    </p>
 
-        ga('create', 'UA-6666179-8', 'mensab.com');
-        ga('send', 'pageview');
-    </script>
+    <h1>Conferences</h1>
+    <div class="row">
+      <div class="one-half column">
+        <p>
+          <strong><a href="https://www.meetup.com/es-ES/sevillajs/" target="_blank">
+              SevillaJS</a></strong><br />
+          Speaker, "D3.JS Data visualization".
+          <a href="/slides/2013/d3.js/" target="_blank">Slides</a>.<br />
+          <em>University of Seville, 2013.</em>
+        </p>
+        <p>
+          <strong>Opendata Sevilla</strong><br />
+          Speaker, "GORQL, SPARQL queries made easy".<br />
+          <em>University Pablo de Olavide, 2012.</em>
+        </p>
+      </div>
+      <div class="one-half column">
+        <p>
+          <strong><a href="http://jmas.us.es" target="_blank">III JMAS</a></strong><br />
+          Speaker, "Flood simulation with multi-agent systems".<br />
+          <em>University of Seville, 2011.</em>
+        </p>
+        <p>
+          <strong><a href="https://es.wikipedia.org/wiki/Imagin%C3%A1tica"
+              target="_blank">Imaginática</a></strong><br />
+          Speaker, "Flood simulation with multi-agent systems".<br />
+          <em>University of Seville, 2011.</em>
+        </p>
+      </div>
+    </div>
+
+    <h1>Hobbies</h1>
+    <ul>
+      <li>
+        <a href="http://boardgamegeek.com/user/Korosu_Itai" target="_blank">
+          Board Games
+        </a>
+      </li>
+      <li>
+        <a href="http://www.filmaffinity.com/es/userratings.php?user_id=155563" target="_blank">
+          Movies
+        </a>
+      </li>
+    </ul>
+
+    <p>
+      <em>
+        This site's code is available on
+        <a href="https://github.com/ablanco/mensab" target="_blank">GitHub</a>, under a MIT License.
+      </em>
+    </p>
+  </div>
 </body>
+
 </html>
