@@ -17,7 +17,53 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
+    <link
+      rel="preload"
+      href="fonts/akatab-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/akatab-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/playpen-sans-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <style>
+      @font-face {
+        font-family: 'Akatab';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('fonts/akatab-500.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Akatab';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('fonts/akatab-700.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Playpen Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('fonts/playpen-sans-400.woff2') format('woff2');
+      }
+
       /* Light type over the photo backdrop; --paper shows before it loads */
       :root {
         --paper: #1b1b1b;
@@ -46,6 +92,7 @@
         background: var(--paper);
         color: var(--ink);
         font-family:
+          'Akatab',
           system-ui,
           -apple-system,
           'Segoe UI',
@@ -53,6 +100,8 @@
           Helvetica,
           Arial,
           sans-serif;
+        /* Akatab has real 400-900 weights, but no italic face */
+        font-weight: 500;
         line-height: 1.6;
       }
 
@@ -116,9 +165,11 @@
 
       h1 {
         margin: 0;
-        font-size: clamp(2.4rem, 6vw, 4.2rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
+        font-family: 'Playpen Sans', cursive;
+        font-size: clamp(2.4rem, 6vw, 3.7rem);
+        /* Playpen Sans is variable 100-800; request the weight in the URL too */
+        font-weight: 400;
+        line-height: 1.2;
       }
 
       .about p {
@@ -145,6 +196,7 @@
 
       .links a {
         font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+        font-weight: 700;
       }
 
       footer {
@@ -224,18 +276,31 @@
   <body>
     <picture class="backdrop">
       <!--
-        Alternate formats go here once the files exist, widest support last:
-          <source type="image/avif" srcset="back.avif" />
-          <source type="image/webp" srcset="back.webp" />
-        Do not add a <source> before its file is committed. The browser picks a
-        source by MIME type support alone, so a missing file is a broken image,
-        not a fall through to the <img> below.
+        AVIF and WebP go here once those files exist, widest support last, each
+        repeating the same srcset widths and the same sizes attribute:
+          <source type="image/avif" srcset="assets/back_960.avif 960w, ..." sizes="..." />
+          <source type="image/webp" srcset="assets/back_960.webp 960w, ..." sizes="..." />
+        Do not add a <source> before its files are committed. The browser picks
+        a source by MIME type support alone, so a missing file is a broken
+        image, not a fall through to the <img> below.
 
-        For extra sizes later, put them on the <img> (and each <source>) as
-        srcset="back-1280.jpg 1280w, back-1920.jpg 1920w, back-2160.jpg 2160w"
-        with sizes="100vw".
+        sizes is max(100vw, 150vh), not 100vw: object-fit cover scales this 3:2
+        photo to the viewport's height on portrait screens, so the width needed
+        is height x 1.5 there. The 150 tracks the image's aspect ratio - recrop
+        the photo and this has to change with it.
       -->
-      <img src="back.jpg" alt="" />
+      <img
+        src="assets/back_1920.jpg"
+        srcset="
+          assets/back_960.jpg   960w,
+          assets/back_1440.jpg 1440w,
+          assets/back_1920.jpg 1920w,
+          assets/back_2560.jpg 2560w,
+          assets/back_3840.jpg 3840w
+        "
+        sizes="max(100vw, 150vh)"
+        alt=""
+      />
     </picture>
 
     <main>
@@ -246,7 +311,8 @@
           <span id="experience">16</span> years of experience, most at home on
           the front-end. I build interfaces with TypeScript, React and Ember.js,
           and the Python and Django services behind them. Lately, much of that
-          work is AI-assisted agentic development.
+          work is AI-assisted agentic development. Away from the screen, I enjoy
+          travel photography.
         </p>
       </section>
 

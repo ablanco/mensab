@@ -4,6 +4,18 @@ mensab homepage
 My very simple, static and humble homepage. Live on
 [mensab.com](http://mensab.com)
 
+Fonts
+=====
+
+The fonts in `fonts/` are self-hosted rather than loaded from Google Fonts, so
+no visitor data reaches a third party. Both are licensed under the SIL Open
+Font License 1.1, whose terms are included alongside them:
+
+- Akatab (weights 500 and 700) - `fonts/OFL-Akatab.txt`
+- Playpen Sans (weight 400) - `fonts/OFL-Playpen-Sans.txt`
+
+The MIT license below covers this site's code, not the fonts.
+
 Legal
 =====
 
