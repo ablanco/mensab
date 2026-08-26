@@ -18,10 +18,12 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <style>
+      /* Light type over the photo backdrop; --paper shows before it loads */
       :root {
-        --ink: #1b1b1b;
-        --muted: #6b6b6b;
-        --link: #1558c0;
+        --paper: #1b1b1b;
+        --ink: #f5f5f5;
+        --muted: #c4c4c4;
+        --link: #a8c7fa;
       }
 
       *,
@@ -41,7 +43,7 @@
         min-height: 100vh;
         min-height: 100dvh;
         margin: 0;
-        background: #fff;
+        background: var(--paper);
         color: var(--ink);
         font-family:
           system-ui,
@@ -69,31 +71,35 @@
         border-radius: 2px;
       }
 
-      /* Top center: salutation */
+      /*
+        Full-page backdrop. A real <picture> rather than a CSS background, so
+        the browser can pick the format and (later) the size. Fixed to the
+        viewport and pulled behind the content with a negative z-index; the
+        dark --paper background shows through until it loads.
+      */
 
-      header {
-        padding: 3.5rem 1.5rem 1rem;
-        text-align: center;
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
       }
 
-      h1 {
-        margin: 0;
-        font-size: clamp(2.4rem, 6vw, 4.2rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
+      .backdrop img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       /*
-        Two full-height columns. Each one centers its own content and parks a
-        corner element at the bottom: the photo on the left, the source note on
-        the right. No left or bottom padding, so the photo reaches the corner.
+        Two columns: salutation and about text on the left, links and source
+        note on the right. One column below 720px.
       */
 
       main {
         display: flex;
         flex: 1;
         gap: 3rem;
-        padding: 2rem 3rem 0 0;
+        padding: 3rem;
       }
 
       .about,
@@ -104,23 +110,28 @@
 
       .about {
         flex: 3 1 0;
+        justify-content: center;
+        gap: 1.5rem;
       }
 
-      .side {
-        flex: 2 1 0;
-        align-items: flex-end;
-        text-align: right;
+      h1 {
+        margin: 0;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
       }
 
       .about p {
         max-width: 60rem;
-        margin: auto 0;
-        padding-left: 3rem;
+        margin: 0;
         font-size: clamp(1.15rem, 2vw, 1.5rem);
       }
 
-      .links {
-        margin: auto 0;
+      .side {
+        flex: 2 1 0;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: right;
       }
 
       .links ul {
@@ -129,39 +140,22 @@
         gap: 0.75rem;
         margin: 0;
         padding: 0;
-        font-size: clamp(1.125rem, 1.98vw, 1.575rem);
         list-style: none;
       }
 
-      .links > ul > li > a {
+      .links a {
         font-size: clamp(1.5rem, 2.8vw, 2.25rem);
       }
 
-      .links ul ul {
-        gap: 0.4rem;
-        margin-top: 0.5rem;
-      }
-
-      .links .group {
-        margin-top: 1.5rem;
-      }
-
-      .links .label {
-        color: var(--muted);
-        font-size: 0.7em;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .photo {
-        width: clamp(240px, 26vw, 380px);
-        aspect-ratio: 1;
-        object-fit: cover;
+      footer {
+        /* auto margin pins it to the bottom when the content is short */
+        margin-top: auto;
+        padding: 0 3rem 3rem;
+        text-align: right;
       }
 
       .source {
-        margin: 2rem 0 0;
-        padding-bottom: 2rem;
+        margin: 0;
         color: var(--muted);
         font-size: 0.9rem;
         font-style: italic;
@@ -173,29 +167,16 @@
       }
 
       @media (max-width: 720px) {
-        /* One column: salutation, photo, description, links, source */
-        header {
-          padding: 2.5rem 1.5rem 0.5rem;
-        }
-
+        /* One column: salutation, about, links, source */
         main {
           flex: 0 1 auto;
           flex-direction: column;
           gap: 2rem;
-          padding: 1.5rem;
+          padding: 2.5rem 1.5rem;
         }
 
-        .photo {
-          order: -1;
-          align-self: center;
-          width: min(300px, 72vw);
-          margin-bottom: 1.5rem;
-          border-radius: 8px;
-        }
-
-        .about p {
-          margin: 0;
-          padding-left: 0;
+        .about {
+          gap: 1rem;
         }
 
         .side {
@@ -203,15 +184,24 @@
           text-align: left;
         }
 
-        .links {
-          margin: 0;
+        footer {
+          padding: 1rem 1.5rem 1.5rem;
         }
 
-        .source {
-          align-self: flex-end;
-          margin-top: 3.5rem;
-          padding-bottom: 1rem;
-          text-align: right;
+        /*
+          A portrait viewport shows the photo's full height, including its
+          bright top band. Darken that band so the light text keeps its
+          contrast; the lower quarter is already dark and stays untouched.
+        */
+        .backdrop::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.3) 40%,
+            rgba(0, 0, 0, 0) 75%
+          );
         }
       }
     </style>
@@ -232,12 +222,25 @@
   </head>
 
   <body>
-    <header>
-      <h1>Hi! I'm Alejandro Blanco</h1>
-    </header>
+    <picture class="backdrop">
+      <!--
+        Alternate formats go here once the files exist, widest support last:
+          <source type="image/avif" srcset="back.avif" />
+          <source type="image/webp" srcset="back.webp" />
+        Do not add a <source> before its file is committed. The browser picks a
+        source by MIME type support alone, so a missing file is a broken image,
+        not a fall through to the <img> below.
+
+        For extra sizes later, put them on the <img> (and each <source>) as
+        srcset="back-1280.jpg 1280w, back-1920.jpg 1920w, back-2160.jpg 2160w"
+        with sizes="100vw".
+      -->
+      <img src="back.jpg" alt="" />
+    </picture>
 
     <main>
       <section class="about">
+        <h1>Hi! I'm Alejandro Blanco</h1>
         <p>
           I'm a full-stack developer from Spain with over
           <span id="experience">16</span> years of experience, most at home on
@@ -245,8 +248,6 @@
           and the Python and Django services behind them. Lately, much of that
           work is AI-assisted agentic development.
         </p>
-
-        <img class="photo" src="me.png" alt="A drawing of myself" />
       </section>
 
       <div class="side">
@@ -271,54 +272,29 @@
               </a>
             </li>
             <li>
-              <a href="mailto:alejandro.b.e@gmail.com">Contact</a>
+              <a href="https://cara.app/mrki" target="_blank" rel="noopener">
+                Photography
+              </a>
             </li>
-            <li class="group">
-              <span class="label">Hobbies</span>
-              <ul>
-                <li>
-                  <a
-                    href="https://cara.app/mrki"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Photography
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://boardgamegeek.com/user/Korosu_Itai"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Board Games
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.filmaffinity.com/es/userratings.php?user_id=155563"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Movies
-                  </a>
-                </li>
-              </ul>
+            <li>
+              <a href="mailto:alejandro.b.e@gmail.com">Contact</a>
             </li>
           </ul>
         </nav>
-
-        <p class="source">
-          This site's code is available on
-          <a
-            href="https://github.com/ablanco/mensab"
-            target="_blank"
-            rel="noopener"
-            >GitHub</a
-          >, under a MIT License.
-        </p>
       </div>
     </main>
+
+    <footer>
+      <p class="source">
+        This site's code is available on
+        <a
+          href="https://github.com/ablanco/mensab"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >, under a MIT License.
+      </p>
+    </footer>
 
     <script>
       (function () {
