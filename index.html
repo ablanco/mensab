@@ -276,19 +276,35 @@
   <body>
     <picture class="backdrop">
       <!--
-        AVIF and WebP go here once those files exist, widest support last, each
-        repeating the same srcset widths and the same sizes attribute:
-          <source type="image/avif" srcset="assets/back_960.avif 960w, ..." sizes="..." />
-          <source type="image/webp" srcset="assets/back_960.webp 960w, ..." sizes="..." />
-        Do not add a <source> before its files are committed. The browser picks
-        a source by MIME type support alone, so a missing file is a broken
-        image, not a fall through to the <img> below.
-
-        sizes is max(100vw, 150vh), not 100vw: object-fit cover scales this 3:2
-        photo to the viewport's height on portrait screens, so the width needed
-        is height x 1.5 there. The 150 tracks the image's aspect ratio - recrop
-        the photo and this has to change with it.
+        Ordered best-compression first: the browser takes the first type it
+        supports. sizes is max(100vw, 150vh), not 100vw, because object-fit
+        cover scales this 3:2 photo to the viewport's height on portrait
+        screens, where the width needed is height x 1.5. The 150 tracks the
+        image's aspect ratio - recrop the photo and this has to change too.
+        Neither srcset nor sizes is inherited, so every source repeats both.
       -->
+      <source
+        type="image/avif"
+        srcset="
+          assets/back_960.avif   960w,
+          assets/back_1440.avif 1440w,
+          assets/back_1920.avif 1920w,
+          assets/back_2560.avif 2560w,
+          assets/back_3840.avif 3840w
+        "
+        sizes="max(100vw, 150vh)"
+      />
+      <source
+        type="image/webp"
+        srcset="
+          assets/back_960.webp   960w,
+          assets/back_1440.webp 1440w,
+          assets/back_1920.webp 1920w,
+          assets/back_2560.webp 2560w,
+          assets/back_3840.webp 3840w
+        "
+        sizes="max(100vw, 150vh)"
+      />
       <img
         src="assets/back_1920.jpg"
         srcset="
@@ -300,6 +316,7 @@
         "
         sizes="max(100vw, 150vh)"
         alt=""
+        fetchpriority="high"
       />
     </picture>
 
